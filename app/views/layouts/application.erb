@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title><%= "SB Rails" %></title>
+    <%= csrf_meta_tags %>
+    <%= tag :meta, :'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8' %>
+    <%= tag :meta, :name => 'description', :content => content_for?(:description) ? yield(:description) : 'SB Rails Lite' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+    <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+    <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+    <link href="/manifest.json" rel="manifest"/>
+    <link color="#f57561" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+    <meta content="SB Rails" name="apple-mobile-web-app-title"/>
+    <meta content="SB Rails" name="application-name"/>
+    <meta content="#ffffff" name="theme-color"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet"/>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= yield :head %>
+  </head>
+</html>
+<body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+            <a class="masthead-link" href="<%= root_path %>">
+              <h3 class="masthead-brand">SB Rails</h3>
+            </a>
+            <nav class="nav nav-masthead">
+              <div class="nav-link"><%= link_to 'Home', root_path %></div>
+              <div class="nav-link"><%= link_to 'Admin', '/admin' %></div>
+            </nav>
+          </div>
+        </div>
+        <div class="inner cover">
+          <div class="<%= controller_name %> <%= action_name %>" id="content">
+            <%= alert_block(notice, 'info') if notice %>
+            <%= alert_block(alert, 'error') if alert %>
+            <%= alert_block(flash[:tip], 'success') if flash[:tip] %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script crossorigin="anonymous" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>

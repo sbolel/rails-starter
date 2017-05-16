@@ -1,0 +1,21 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+
+Documentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Style/IndentationWidth:
+  Width: 2
+
+Style/Semicolon:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 100

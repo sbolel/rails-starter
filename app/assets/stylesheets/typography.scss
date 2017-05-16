@@ -1,0 +1,21 @@
+@import 'variables.scss';
+
+/* Links */
+a {
+  color: $red-dark;
+  -webkit-transition: color .33s; /* Safari */
+  transition: color .33s;
+}
+
+a, a:focus, a:hover {
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: $red;
+}
+
+code, .code, .code textarea {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: pre;
+}
